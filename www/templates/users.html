@@ -1,0 +1,27 @@
+<ion-header-bar class="bar-dark">
+  <div class="buttons">
+    <button class="button button-positive" ng-click="getUsers()">
+		  Get Users
+		</button>
+  </div>
+  <h1 class="title">Users</h1>
+  <div class="buttons">
+  	<button class="button button-balanced" ng-click="sendUsers()">
+		  Send Users
+		</button>
+  </div>
+</ion-header-bar>
+
+<ion-content class="padding">
+	  <ion-list>
+			<ion-item class="item-avatar" ng-repeat="item in users">
+				<img ng-src="{{item.picture.thumbnail}} " />
+				<h2>{{item.name.first}} {{item.name.last}}</h2>
+				<p>{{item.location.city}} {{item.login.password}}</p>
+
+				<ion-option-button class="button-positive" ng-click="sendUser(item)">
+		      Send
+		    </ion-option-button>
+			</ion-item>
+		</ion-list>
+</ion-content>
